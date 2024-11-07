@@ -47,7 +47,6 @@ There is only one group member, me (Andrew Ding).
 - Week 4: Use PBR features in Houdini for a more realistic look.
 - Any extra time: Try to add animations.
 
-Submit your Design doc as usual via pull request against this repository.
 ## Milestone 1: Implementation part 1 (due 11/13)
 Begin implementing your engine! Don't worry too much about polish or parameter tuning -- this week is about getting together the bulk of your generator implemented. By the end of the week, even if your visuals are crude, the majority of your generator's functionality should be done.
 
