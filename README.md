@@ -5,30 +5,47 @@ This is it! The culmination of your procedural graphics experience this semester
 ## Project planning: Design Doc (due 11/6)
 Before submitting your first milestone, _you must get your project idea and scope approved by Rachel, Adam or a TA._
 
-### Design Doc
-Start off by forking this repository. In your README, write a design doc to outline your project goals and implementation plan. It must include the following sections:
-
 #### Introduction
-- What motivates your project?
+My project will be to create a robotic character generator, inspired by the specialized robots as featured in science fiction media (e.g. *Horizon Zero Dawn*, *Titanfall*). These robots are diverse in appearance and functionality, but typically follow some natural rules which might enable procedural generation. I will make a tool to generate such robotic generators more easily.
 
 #### Goal
-- What do you intend to achieve with this project?
+To produce a robotic character generator as a Houdini program. Given a main body pattern, it should be able to generate random robots or allow the user to easily customize individual parts. 
 
 #### Inspiration/reference:
-- You must have some form of reference material for your final project. Your reference may be a research paper, a blog post, some artwork, a video, another class at Penn, etc.  
-- Include in your design doc links to and images of your reference material.
+As reference for the typical kind robots that this tool should generate, here are some fanarts of the robots from *Rimworld*:
+![ref - rimworld diabolus fanart](https://github.com/user-attachments/assets/ea872896-253c-4619-8ab2-4c2bf0024d52)
+![ref - rimworld light mechanoids fanart](https://github.com/user-attachments/assets/75334196-6583-4412-9ff3-11a05acbe1d1)
+
+Another major reference is the machines from *Horizon Zero Dawn*.
+![ref - HZD scrapper](https://github.com/user-attachments/assets/dc56410b-4235-4b15-ba0d-b8476d50892c)
+![ref - HZD Machines](https://github.com/user-attachments/assets/90479cf6-a6a2-4f3b-ba7b-e99c831cb65b)
+
+However, HZD's robots are very detailed and mostly imitate animals; thus, they are an auxiliary reference.
 
 #### Specification:
-- Outline the main features of your project.
+The program will be a geometry graph in Houdini. As input, this graph will require a piece of geometry to use as the "main body" as the robot. The program will then construct the main body in that approximate shape and continuously add legs/wheels, sensors, tools, and weapons until it deems the robot "complete." All of the additional parts should have their scale and type controllable by other parameters that are inputs to the graph. The final output will be a geometry in Houdini as well; it should be a robot that is both aesthetic and physically plausible.
 
 #### Techniques:
-- What are the main technical/algorithmic tools you’ll be using? Give an overview, citing specific papers/articles.
+This project should take a semi-teleological approach to generating robots. The goal is to construct a robot that looks like it could perform a particular function well. For example, legs must be an appropriate length and shape to support the main body, and weapons must be located in an area where they would be effective. 
+
+Key techniques to use:
+- Scaling limbs by body size in a manner analogous to animals' legs; ref. *Scale effects between body size and limb design in quadrupedal mammals* by Kilbourne, Hoffman
+- Approximate collision detection via approximate convex hulls (ref. *Fast Approximation of Convex Hull* by Kavan, Kolingerova, Zara); it will be necessary to generate some parts that don't collide with another
+- rejection sampling; for the most part it will not be possible to generate robots that are always satisfactory
+- limb-based inverse kinematics for making reasonable limbs
 
 #### Design:
-- How will your program fit together? Make a simple free-body diagram illustrating the pieces.
+- ![diagram](https://github.com/user-attachments/assets/ca5f96b7-2d49-4b8b-9163-3d396588a8a6)
+
 
 #### Timeline:
-- Create a week-by-week set of milestones for each person in your group. Make sure you explicitly outline what each group member's duties will be.
+There is only one group member, me (Andrew Ding).
+
+- Week 1: Have a generator supporting approximate parts. We should be able to generate a robot with space or all the parts mapped out, although they do not have to be very detailed.
+- Week 2: Support a few different types of each part (mobility parts, sensors, functional parts) and allow switching between them.
+- Week 3: Add support for multiple methods of constructing the main body.
+- Week 4: Use PBR features in Houdini for a more realistic look.
+- Any extra time: Try to add animations.
 
 Submit your Design doc as usual via pull request against this repository.
 ## Milestone 1: Implementation part 1 (due 11/13)
