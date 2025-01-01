@@ -58,9 +58,8 @@ Demo:
 https://github.com/user-attachments/assets/2f848260-a4c8-4e12-aafb-9d66f3a5a505
 
 Images:
-![](render.png)
-![](torus.png)
-![](complex.png)
 
+![complex](https://github.com/user-attachments/assets/c0e20312-cca9-4ee5-9010-342b468151db)
 
-
+![render](https://github.com/user-attachments/assets/b46b67b9-327a-4fe0-ba22-e4e5b7c3ff5b)
+![torus](https://github.com/user-attachments/assets/16d3e206-c46e-4edf-90e2-a037c535a165)
