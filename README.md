@@ -63,3 +63,19 @@ Images:
 
 ![render](https://github.com/user-attachments/assets/b46b67b9-327a-4fe0-ba22-e4e5b7c3ff5b)
 ![torus](https://github.com/user-attachments/assets/16d3e206-c46e-4edf-90e2-a037c535a165)
+
+## Post-mortem
+I don't think the project went well overall. I was much slower than I expected. There are some things I am proud of, but overall I didn't achieve my goals. In particular:
+- The generated meshes are untextured, since I couldn't figure out how to set material properties for both generated and imported geometry cleanly
+- There aren't that many options for parts
+- The design of the tool makes too many assumptions about robots being roughly animal-like with legs below
+- There's no ability to specify context for each tool, leading to haphazard and unlikely placement of tools
+
+In hindsight, it might have been too ambitious to expect a good outcome when the generator can only be controlled by one interface. Also, I spent a lot of time just trying to figure out how to do things in Houdini. I think all of my goals are possible with Houdini, but I just didn't learn the tool well enough.
+
+Some successes of the project:
+- The use of a modified Lloyd's algorithm for choosing leg and tool start points; I modified it so that it could force symmetry as well
+  - Unfortunately, this did take a lot of time, which slowed down the project
+- The interface is relatively easy to use and intuitive
+
+
